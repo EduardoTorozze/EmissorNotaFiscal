@@ -1,20 +1,33 @@
 
 function Imprimir() {
     var conteudo = document.getElementById("print-content").innerHTML;
-    var originalBody = document.body.innerHTML;
-  
-    document.body.innerHTML = conteudo;
-  
-    window.print();
-  
-    document.body.innerHTML = originalBody;
 
-     // Limpar localStorage
-     localStorage.clear();
+    if (window.innerWidth >= 768) {
+        // Se a largura da tela for maior ou igual a 768px (não é um dispositivo móvel)
+        // Abre uma nova janela, insere o conteúdo e imprime
+        var printWindow = window.open('', '_blank');
+        printWindow.document.open();
+        printWindow.document.write('<html><head><title>Print</title></head><body>');
+        printWindow.document.write(conteudo);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
 
-     window.close();
+        printWindow.print();
+        printWindow.close();
+    } else {
+        // Se a largura da tela for menor que 768px (é um dispositivo móvel)
+        // Criar um PDF e permitir o download
+        var pdf = new jsPDF();
+        pdf.text(conteudo, 10, 10);
+        pdf.save("documento.pdf");
 
-  }
+        // Limpar localStorage
+        localStorage.clear();
+    }
+}
+
+document.getElementById("print-button").addEventListener("click", Imprimir);
+
 
    // Função para recuperar o dado da URL
     function getParameterByName(name, url) {
