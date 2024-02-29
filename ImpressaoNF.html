@@ -9,7 +9,6 @@
 
 <title>Emitir Nota Fiscal</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script><!--Gerador PDF-->
 
 </head>
 
@@ -182,7 +181,7 @@
     function Imprimir() {
         var conteudo = document.getElementById("print-content").innerHTML;
 
-        if (window.innerWidth >= 768) {
+
             // Se a largura da tela for maior ou igual a 768px (não é um dispositivo móvel)
             var conteudo = document.getElementById("print-content").innerHTML;
             var originalBody = document.body.innerHTML;
@@ -197,17 +196,7 @@
             localStorage.clear();
         
             window.close();
-        } else {
-            // Se a largura da tela for menor que 768px (é um dispositivo móvel)
-            // Criar um PDF e permitir o download
-            var pdf = new jsPDF();
-            pdf.text(conteudo, 10, 10);
-            pdf.save("NotaFiscal.pdf");
-
-            // Limpar localStorage
-            localStorage.clear();
-        }
-    }
+}
 
 </script>
 
