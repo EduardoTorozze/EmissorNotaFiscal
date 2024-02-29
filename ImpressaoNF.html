@@ -182,8 +182,8 @@
    function Imprimir() {
     var larguraTela = window.innerWidth;
     
-    // Verifica se a largura da tela é menor que 768 pixels
-    if (larguraTela < 768) {
+    // Verifica se a largura da tela é maior que 768 pixels
+    if (larguraTela > 768) {
         var conteudo = document.getElementById("print-content").innerHTML;
         var originalBody = document.body.innerHTML;
     
