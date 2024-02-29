@@ -1,33 +1,3 @@
-  function Imprimir() {
-    var conteudo = document.getElementById("print-content").innerHTML;
-
-    if (window.innerWidth >= 768) {
-        // Se a largura da tela for maior ou igual a 768px (não é um dispositivo móvel)
-        var conteudo = document.getElementById("print-content").innerHTML;
-        var originalBody = document.body.innerHTML;
-      
-        document.body.innerHTML = conteudo;
-      
-        window.print();
-      
-        document.body.innerHTML = originalBody;
-    
-         // Limpar localStorage
-         localStorage.clear();
-    
-         window.close();
-    } else {
-        // Se a largura da tela for menor que 768px (é um dispositivo móvel)
-        // Criar um PDF e permitir o download
-        var pdf = new jsPDF();
-        pdf.text(conteudo, 10, 10);
-        pdf.save("documento.pdf");
-
-        // Limpar localStorage
-        localStorage.clear();
-    }
-}
-
    // Função para recuperar o dado da URL
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
