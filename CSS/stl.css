@@ -55,6 +55,12 @@ img{
 
 @media screen and (max-width: 768px) {
 
+  @media print {
+    #btn_imprimir {
+        display: none;
+    }
+  }
+
     body{
         overflow-x: hidden;
     }
