@@ -178,25 +178,31 @@
 <script src="./JS/Impressao.js"></script>
 
 <script> 
-    function Imprimir() {
+   
+   function Imprimir() {
+    var larguraTela = window.innerWidth;
+    
+    // Verifica se a largura da tela é menor que 768 pixels
+    if (larguraTela < 768) {
         var conteudo = document.getElementById("print-content").innerHTML;
-
-
-            // Se a largura da tela for maior ou igual a 768px (não é um dispositivo móvel)
-            var conteudo = document.getElementById("print-content").innerHTML;
-            var originalBody = document.body.innerHTML;
-        
-            document.body.innerHTML = conteudo;
-        
-            window.print();
-        
-            document.body.innerHTML = originalBody;
-        
-            // Limpar localStorage
-            localStorage.clear();
-        
-            window.close();
+        var originalBody = document.body.innerHTML;
+    
+        document.body.innerHTML = conteudo;
+    
+        window.print();
+    
+        document.body.innerHTML = originalBody;
+    
+        // Limpar localStorage
+        localStorage.clear();
+    
+        window.close();
+    } else {
+        // Se a largura da tela for maior ou igual a 768 pixels, imprime normalmente
+        window.print();
+    }
 }
+
 
 </script>
 
