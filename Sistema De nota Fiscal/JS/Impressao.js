@@ -1,20 +1,20 @@
 
 function Imprimir() {
     var conteudo = document.getElementById("print-content").innerHTML;
-    var printWindow = window.open('', '_blank');
-    
-    printWindow.document.open();
-    printWindow.document.write('<html><head><title>Print</title></head><body>');
-    printWindow.document.write(conteudo);
-    printWindow.document.write('</body></html>');
-    printWindow.document.close();
+    var originalBody = document.body.innerHTML;
+  
+    document.body.innerHTML = conteudo;
+  
+    window.print();
+  
+    document.body.innerHTML = originalBody;
 
-    printWindow.print();
-    printWindow.close();
+     // Limpar localStorage
+     localStorage.clear();
 
-    // Limpar localStorage
-    localStorage.clear();
-}
+     window.close();
+
+  }
 
    // Função para recuperar o dado da URL
     function getParameterByName(name, url) {
