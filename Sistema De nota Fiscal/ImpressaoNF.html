@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./CSS/stl.css">
+<link rel="shortcut icon" type="imagex/png" href="./Images/ICODanfe.ico"><!--icon-->
+<title>Emitir Nota Fiscal</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 p-4">
+<div class="bg-white shadow-md p-4 rounded" id="print-content">
+<div class="flex items-center justify-between mb-4">
+<span class="text-lg font-semibold"> NOTA FISCAL - NOME EMPRESA</span>
+
+
+
+<span class="text font-semibold" id="DataEmissao">Data de Emissão: </span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+
+
+</div>
+<div class="grid grid-cols-2 gap-4 mt-4">
+
+</div>
+
+    <div class="cxmae">
+
+        <img src="./Images/senaclogo2024.jpg" alt="">     
+        
+        <div id="cx" class ="cx">
+
+            <div class="danfe">
+
+                <span class="text-sm font-semibold">Nº de Nota:  <span id="NumNotaNF" style="color: gray; margin: 20px;"></span></span>
+                <br>
+                <span class="text-sm font-semibold" >Entrada - 0 | Saida - 1: <span id="bordaEntrada" style="color: gray; margin-left: 35px;  border: 1.5px solid black; border-radius: 2px; padding: 5px 8px 5px 8px ; text-align: center;"></span></span> 
+                <br>
+                <span class="text-sm font-semibold" >Série: <span  id="Serie" style="color: gray; margin: 20px;"></span></span> 
+                <br>
+                <span class="text-sm font-semibold" >Natureza Da Operação: <span id="NatuOper" style="color: gray; margin: 20px;"></span></span> 
+                
+    
+            </div>
+
+        </div>
+
+    </div>
+
+<div class="flex justify-between" style="margin-top: 5vh;">
+    
+    <div> 
+
+           <div class="infoEmissorDest">
+
+            <br>
+            <span style="font-size: 16px;" class="text-sm font-bold">Remetente</span>
+            <hr>
+            <span class="text-sm font-semibold" >Remetente: <span style="color: gray; margin: 20px;">Senac Empreendimentos</span></span> 
+            <br>
+            <span class="text-sm font-semibold" >CPF/CNPJ: <span style="color: gray; margin: 20px;" class="text-gray">47.849.219/4314-9</span></span> 
+            <br>
+            <span class="text-sm font-semibold" >Contato: <span style="color: gray; margin: 20px;" class="text-gray">senacempreendimentos@gmail.com</span></span>
+            <br>
+            <span class="text-sm font-semibold" >CEP: <span style="color: gray; margin: 20px;" class="text-gray">37200-000</span></span>
+            <br>
+            <span class="text-sm font-semibold" >UF: <span style="color: gray; margin: 20px;" class="text-gray">MG</span></span>
+            <br>
+            <span class="text-sm font-semibold" >Município: <span style="color: gray; margin: 20px;" class="text-gray">Lavras</span></span>
+            <br>
+            <span class="text-sm font-semibold" >Bairro: <span style="color: gray; margin: 20px;" class="text-gray">Artur Bernades</span></span>
+            <br>
+            <span class="text-sm font-semibold" >Logradouro: <span style="color: gray; margin: 20px;" class="text-gray">R. Cmte. Soares Júnior</span></span>
+            <br>
+            <span class="text-sm font-semibold" >Complemento: <span style="color: gray; margin: 20px;" class="text-gray">Centro</span></span>
+            <br>
+            <span class="text-sm font-semibold" >Número: <span style="color: gray; margin: 20px;" class="text-gray">68</span></span>
+            <br>
+            <span class="text-sm font-semibold" >Telefone: <span style="color: gray; margin: 20px;" class="text-gray">(35) 9 9126-4214</span></span>
+           </br>
+
+            <br>
+            <span style="font-size: 16px;" class="text-sm font-bold">Destinatário</span>
+            <hr>
+            <span class="text-sm font-semibold" >Cliente: <span id="ClienteEmit" style="color: gray; margin: 20px;"></span></span> 
+            <br>
+            <span class="text-sm font-semibold" >CPF/CNPJ: <span id="CpfCnpjEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span> 
+            <br>
+            <span class="text-sm font-semibold" >Inscrição Estadual: <span  id="InscEstEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >Contato: <span id="ContatoEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >CEP: <span id="CepEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >UF: <span id="UFEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >Município: <span id="MunicipioEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >Bairro: <span id="BairroEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >Logradouro: <span id="LogradouroEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >Complemento: <span id="ComplementoEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >Número: <span id="NumeroEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >Telefone: <span id="TelefoneEmit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+            <br>
+            <span class="text-sm font-semibold" >IE do Substituto Tributário: <span id="IST_Emit" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+
+           </div>
+
+    </div>
+    <div>
+        <br>
+        <span style="font-size: 16px;" class="text-sm font-bold">Transportadora</span>
+        <hr>
+        <span class="text-sm font-semibold" >Razão Social/Nome: <span  id="RazaoSocialTrans" style="color: gray; margin: 20px;"></span></span> 
+        <br>
+        <span class="text-sm font-semibold" >Frete Pago Pelo: <span id="FretePagoTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span> 
+        <br>
+        <span class="text-sm font-semibold" >CNPJ: <span id="CNPJTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Inscrição Estadual: <span id="IETrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >CEP: <span id="CEPTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >UF: <span id="UFTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Município: <span id="MunicipioTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Logradouro: <span id="LogradouroTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Quantidade: <span id="QtdTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Espécie: <span id="EspeciaTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Marca: <span id="MarcaTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Numeração: <span id="NumeracaoTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Peso Líquido<span id="PesoLTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+        <br>
+        <span class="text-sm font-semibold" >Peso Bruto: <span id="PesoBTrans" style="color: gray; margin: 20px;" class="text-gray"></span></span>
+
+    </div>
+   
+</div>
+
+        <!-- Tabela para informações do produto -->
+        <table class="w-full mt-4" style="margin-top: 10vh;">
+            <thead id="registrotitle">
+                <tr>
+                    <th class="border p-2 text-left">Código</th>
+                    <th class="border p-2 text-left">Descrição do produto</th>
+                    <th class="border p-2 text-left">Quantidade</th>
+                    <th class="border p-2 text-left">Valor Unitário (R$)</th>
+                    <th class="border p-2 text-right">Valor Total (R$)</th>
+                </tr>
+            </thead>
+            <tbody id="registro">
+                <!-- Aqui serão adicionadas as linhas dos produtos -->
+            </tbody>
+        </table>
+
+</div>
+<br/>
+
+<div class="flex justify-end">
+    <button onclick="Imprimir()" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded" style="margin-bottom:10px;">Imprimir<span class="ml-1">&#x1F5A8;</span></button>
+</div>
+
+<script src="./JS/Impressao.js"></script>
+
+</body>
+</html>

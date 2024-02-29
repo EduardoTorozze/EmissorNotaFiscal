@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/materialize/css/materialize.min.css"> <!-- Materialize CSS --> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+        <script src="/CSS/materialize/js/materialize.min.js"></script><!-- Compiled and minified JavaScript -->
+        
+        <link rel="stylesheet" href="CSS/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="imagex/png" href="./Images/ICODanfe.ico"><!--icon-->
+        <title>Emissor de Nota Fiscal V0.1</title>
+        
+</head>
+
+    <body>
+
+        <main id="maintela">
+        <ul id="tabs-swipe-demo" class="tabs">
+                <li class="tab col s3"><a class="active" href="#Destinatario">Destinatário</a></li>
+                <li class="tab col s3"><a href="#Transportador">Transportadora</a></li>
+                <li class="tab col s3"><a href="#Produto">Dados do Produto</a></li>
+                
+        </ul>
+
+        <!--Início Forms de cada Aba - Aba Destinatario-->
+        
+              <div id="Destinatario" class="col s12 Abas remetente" style=" overflow-y: auto;">
+
+                <div class="forms">
+                 <div class="row">
+                    <form class="col s12">
+
+                      <div class="row">
+                        <div class="input-field col s4">
+                          <input placeholder="" id="Cliente" type="text" class="validate">
+                          <label for="Cliente">Cliente:</label>
+                        </div>
+                        <div class="input-field col s4">
+                          <input placeholder="" id="CpfCnpj" type="text" class="validate">
+                          <label for="CpfCnpj">CPF/CNPJ</label>
+                        </div>
+
+                        <div class="input-field col s4">
+                          <input placeholder="" id="Contato" type="text" class="validate">
+                          <label for="Contato">Contato:</label>
+                        </div>
+
+                      </div>
+                  
+         
+
+                      <div class="row">
+
+                        <div class="input-field col s3">
+                          <input placeholder="" id="Telefone" type="text" class="validate">
+                          <label for="Telefone">Telefone:</label>
+                        </div>
+
+                        <div class="input-field col s3">
+                          <input placeholder="" id="InscricaoEstadual" type="text" class="validate ie">
+                          <label for="InscricaoEstadual">Inscrição Estadual:</label>
+                        </div>
+
+                        <div class="input-field col s3">
+                          <input placeholder="" id="IEdoSubstitulotributario" type="text" class="validate ie">
+                          <label for="IEdoSubstitulotributario">IE do Substituto Tributário:</label>
+                        </div>
+                        
+                        <div class="input-field col s3">
+                          <input placeholder="" id="CEP" type="text" class="validate">
+                          <label for="CEP">CEP:</label>
+                        </div>
+
+                      </div>
+                      
+                      
+                  
+                      <div class="row">
+
+
+                        <div class="input-field col s1">
+                          <input placeholder="" id="UF" type="text" class="validate">
+                          <label for="UF">UF:</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input placeholder="" id="Municipio" type="text" class="validate">
+                          <label for="Municipio">Município:</label>
+                        </div>
+
+                        <div class="input-field col s4">
+                          <input placeholder="" id="Bairro" type="text" class="validate">
+                          <label for="Bairro">Bairro:</label>
+                        </div>
+
+                        <div class="input-field col s4">
+                          <input placeholder="" id="rua" type="text" class="validate">
+                          <label for="rua">Logradouro:</label>
+                        </div>
+
+                     </div>
+
+                     <div class="row">
+
+                      <div class="input-field col s4">
+                        <input placeholder="" id="Complemento" type="text" class="validate">
+                        <label for="Complemento">Complemento:</label>
+                      </div>
+
+                      <div class="input-field col s2">
+                        <input placeholder="" id="Numero" type="text" class="validate">
+                        <label for="Numero">Número:</label>
+                      </div>
+                      
+                    </div>
+                    </form>
+                  </div>
+                </div>
+            <!--FIM Forms de cada Aba - Aba Destinatario-->
+
+            </div>
+              
+    
+              
+<div id="Transportador" class="col s12 Abas" style=" overflow-y: auto;">
+
+                  <!--FORM TRANSPORTADOR AQUI-->
+
+    <div class="forms">
+        <div class="row">
+           <form class="col s12">
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="" id="RazaoSocial" type="text" class="validate">
+                    <label for="RazaoSocial">Razão Social / Nome:</label>
+                </div>
+            
+                <div class="input-field col s3">
+                  <input placeholder="" id="ValorFrete" type="text" class="validate">
+                  <label for="ValorFrete">Valor Do Frete:</label>
+              </div>
+
+                <div class="input-field col s3">
+                   <select id="Frete" class="browser-default">
+                      <option value="0">Frete Pago Pelo</option>
+                      <option value="1">1 - Destinatário</option>
+                      <option value="2">2 - Transportadora</option>
+                   </select>
+                </div>
+
+            </div>
+
+              <div class="row">
+                <div class="input-field col s3">
+                  <input placeholder="" id="CNPJ" type="text" class="validate">
+                  <label for="CNPJ">CNPJ: </label>
+                 </div>
+               
+                 <div class="input-field col s3">
+                   <input placeholder="" id="IE" type="text" class="validate ie">
+                   <label for="IE">Inscrição Estadual:  </label>
+                  </div>
+                  
+                  <div class="input-field col s3">
+                    <input placeholder="" id="CEP2" type="text" class="validate">
+                    <label for="CEP2">CEP: </label>
+                  </div> 
+
+                 <div class="input-field col s3">
+                   <input placeholder="" id="UF_transpor" type="text" class="validate">
+                   <label for="UF_transpor">UF: </label>
+                 </div>  
+               
+               
+               </div>
+               <div class="row">
+ 
+                <div class="input-field col s6">
+                  <input placeholder="" id="Logradouro_transpor" type="text" class="validate">
+                  <label for="Logradouro_transpor">Logradouro: </label>
+                </div> 
+                <div class="input-field col s6">
+                  <input placeholder="" id="Municipio2" type="text" class="validate">
+                  <label for="Municipio2">Município: </label>
+                </div> 
+                
+               </div>
+
+                
+               <div class="row">
+
+                <div class="input-field col s3">
+                  <input placeholder="" id="Quantidade" type="text" class="validate">
+                  <label for="Quantidade">Quantidade:  </label>
+                </div>
+
+                 <div class="input-field col s3">
+                   <input placeholder="" id="Especie" type="text" class="validate">
+                   <label for="Especie">Espécie:  </label>
+                 </div>
+                 <div class="input-field col s3">
+                   <input placeholder="" id="Marca" type="text" class="validate">
+                   <label for="Marca">Marca: </label>
+                 </div>  
+                 <div class="input-field col s3">
+                  <input placeholder="" id="Numeracao" type="text" class="validate">
+                  <label for="Numeracao">Numeração: </label>
+                </div> 
+              
+         
+               
+             </div>   
+             <div class="row">
+
+  <div class="input-field col s3">
+                  <input placeholder="" id="pesoL" type="text" class="validate">
+                  <label for="pesoL">Peso Líquido: </label>
+                </div> 
+                <div class="input-field col s3">
+                  <input placeholder="" id="pesoB" type="text" class="validate">
+                  <label for="pesoB">Peso Bruto: </label>
+                </div> 
+
+             </div>        
+           </form>
+         
+       
+        </div>
+        <!-- //  FINAL DO FORM TRANSPORTADOR AQUI // -->
+
+
+        </div>
+             
+              <div id="Produto" class="col s12 Abas">
+
+                <!---         //DADOS DO PRODUTO//   --->
+
+                <div class="forms">
+
+                    <div class="row">
+                       <form class="col s12">
+
+                      <div class="row">
+
+                           <div class="input-field col s3">
+                             <input placeholder="" id="cdg_pdt" type="text" class="validate">
+                             <label for="cdg_pdt">Código do Produto</label>
+                           </div>
+
+                           <div class="input-field col s4">
+                            <input placeholder="" id="dsc_pdt" type="text" class="validate">
+                            <label for="dsc_pdt">Descrição do Produto</label>
+                          </div>
+
+                          <div class="input-field col s1">
+                            <input placeholder="" id="qtd_dados" type="text" class="validate">
+                            <label for="qtd_dados">Quantidade</label>
+                          </div>
+
+                          <div class="input-field col s2">
+                            <input placeholder="" id="vlr_uni" type="text" class="validate">
+                            <label for="vlr_uni">Valor Unitário</label>
+                          </div>
+
+                          <div class="input-field col s2">
+                            <input disabled placeholder="" id="vlr_total" type="text" class="validate">
+                            <label for="vlr_total">Valor Total</label>
+                          </div>
+
+                       </div>
+                       
+                       </form>
+        
+                     </div>
+                   </div>
+
+  <!-- Dentro da aba Dados do Produto -->
+  <div id="dadosProduto" class="forms">
+
+  <div id="ListaProdutosMobile" style="color: black;"></div>
+  <!-- Tabela para exibir os produtos -->
+  <table id="tabelaProdutos" style="color: black;">
+      <thead>
+          <tr>
+              <th style="position: sticky; top: 0; background-color: white; z-index: 1; margin-left: 0.1rem;">Código</th>
+              <th style="position: sticky; top: 0; background-color: white; z-index: 1;">Descrição</th>
+              <th style="position: sticky; top: 0; background-color: white; z-index: 1;">Quantidade</th>
+              <th style="position: sticky; top: 0; background-color: white; z-index: 1;">Valor Unitário (R$)</th>
+              <th style="position: sticky; top: 0; background-color: white; z-index: 1;">Valor Total (R$)</th>
+              <th>Ação</th>
+          </tr>
+      </thead>
+      <tbody id="corpoTabela">
+          <!-- Aqui é onde os produtos serão exibidos dinamicamente -->
+      </tbody>
+  </table>
+</div>
+
+<!-- Botões de Imprimir e Apagar -->
+<div id="botoesExtras" style="padding: 10px;">
+
+    <!-- Botão para adicionar novo produto -->
+    <button onclick="adicionarProduto()" class="waves-effect waves-light btn">Adicionar Produto</button>
+
+    <button onclick ="transferirDados()" class="waves-effect waves-light btn blue">Visualizar Nota Fiscal</button>
+
+      <!-- Modal para exibir a mensagem -->
+      <div id="modalMensagem" class="modal" style="border-radius: 8px;">
+          <div class="modal-content" style="color: black;">
+              <h4>Recriar Nota Fiscal</h4>
+              <p>Deseja realmente recriar a nota fiscal?</p>
+          </div>
+          <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat" style="color: red;">Cancelar</a>
+              <a href="#!" id="confirmarRecriar" class="modal-close waves-effect waves-green btn-flat" style="color: green;">Confirmar</a>
+          </div>
+      </div>
+
+      <!-- Botão para recriar a nota fiscal -->
+      <button id="botaoRecriar" class="waves-effect waves-light btn red">Recriar Nota Fiscal</button>
+
+</div>
+
+              </div>
+            <!--- //FINAL DO FORM DADOS DO PRODUTO// --->
+
+              </div>
+
+              <ul id="Danfe" class="tabs">
+                <li class="tab col s3">
+                    <div class="row">
+                        <div class="input-field col s7">
+                            <input placeholder="000000001" id="NumNotaFiscal" type="text" class="validate valid" disabled>
+                            <label for="NumNotaFiscal">Nº da Nota</label>
+                        </div>
+                    </div>
+                </li>
+                <li class="tab col s3">
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <input placeholder="" id="SerieNotaFiscal" type="text" class="validate valid">
+                            <label for="SerieNotaFiscal">Série</label>
+                        </div>
+                    </div>
+                </li>
+                <li class="tab col s12">
+                    <div class="row">
+                        <div class="input-field col s13">
+                            <input placeholder="00/00/00" id="data_emissao" type="text" class="validate valid">
+                            <label for="data_emissao">EMISSÃO</label>
+                        </div>
+                    </div>
+                </li>
+                <li class="tab col s6">
+                    <div class="input-field col s3">
+                        <select id="Naturezaoper" class="browser-default">
+                            <option value="0">Natureza da Operação</option>
+                            <option value="1">Venda</option>
+                            <option value="2">Devolução</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="tab col s6">
+                    <div class="input-field col s3">
+                        <select id="entrada" class="browser-default">
+                            <option value="0">0 - Entrada</option>
+                            <option value="1">1 - Saída</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+    
+        </main>
+        
+        <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.modal');
+          var instances = M.Modal.init(elems);
+
+          // Evento de clique no botão para abrir o modal
+          document.getElementById('botaoRecriar').addEventListener('click', function() {
+              var modalInstance = M.Modal.getInstance(document.getElementById('modalMensagem'));
+              modalInstance.open();
+          });
+
+          // Evento de clique no botão de confirmar dentro do modal
+          document.getElementById('confirmarRecriar').addEventListener('click', function() {
+              // Lógica para recriar a nota fiscal
+              // Isso pode incluir limpar os campos, redefinir variáveis, etc.
+
+              // Exemplo: Limpar o localStorage e recarregar a página
+              limparLocalStoragefunction();
+              location.reload();
+              incrementarNumeroNota();
+          });
+        });
+
+    //Mask de Pré-definições
+        $('#Telefone').mask('(00) 9 0000-0000');
+        $('#CEP').mask('00000-000');
+        $('#CEP2').mask('00000-000');
+        $('#CNPJ').mask('00.000.000/0000-00');
+
+        $(document).ready(function(){
+            $('#CpfCnpj').on('input', function(){
+                var typedValue = $(this).val().replace(/\D/g, '');
+                var mask = (typedValue.length > 11) ? '00.000.000/0000-00' : '000.000.000-00999';
+                $(this).mask(mask);
+            });
+        });
+
+        //Inscrição Estadual
+        $(document).ready(function(){
+            $('.ie').on('input', function(){
+              var inputValue = $(this).val().replace(/\D/g, ''); // Remove caracteres não numéricos
+                var mask = '';
+                if (inputValue.length <= 9) { // Acre, Amapá, Amazonas, Espírito Santo, Goiás, Maranhão, Mato Grosso, Mato Grosso do Sul, Pará, Piauí, Rondônia, Roraima, Tocantins
+                    mask = '00.000.000/000-00';
+                } else if (inputValue.length <= 10) { // Rio de Janeiro, Sergipe, Alagoas, Ceará, Distrito Federal, Paraíba, Rio Grande do Norte, Roraima, Tocantins
+                    mask = '00.000.000-0';
+                } else if (inputValue.length <= 11) { // Bahia, Paraná
+                    mask = '000.000.000/000';
+                } else if (inputValue.length <= 12) { // Pernambuco, Santa Catarina
+                    mask = '0000000-00';
+                } else if (inputValue.length <= 13) { // Minas Gerais
+                    mask = '000.000.000.000';
+                } else if (inputValue.length <= 14) { // São Paulo
+                    mask = '00.000.000/000.000';
+                } else if (inputValue.length <= 17) { // Rio Grande do Sul
+                    mask = '000/00000000';
+                }
+                $(this).mask(mask);
+            });
+        });
+
+//API para CEP Destinatario
+document.getElementById('CEP').addEventListener('blur', function() {
+    const cep = this.value.replace(/\D/g, '');
+
+    if (cep.length !== 8) {
+        alert('CEP inválido');
+        return;
+    }
+
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.erro) {
+                alert('CEP não encontrado');
+            } else {
+                document.getElementById('UF').value = data.uf;
+                document.getElementById('Municipio').value = data.localidade;
+                document.getElementById('Bairro').value = data.bairro;
+                document.getElementById('rua').value = data.logradouro;
+
+                // Aplicar classes de validação
+                document.getElementById('UF').classList.add('validate', 'valid');
+                document.getElementById('Municipio').classList.add('validate', 'valid');
+                document.getElementById('Bairro').classList.add('validate', 'valid');
+                document.getElementById('rua').classList.add('validate', 'valid');
+            }
+        })
+        .catch(error => console.error('Erro na requisição:', error));
+});
+
+//API para CEP TRANSPORTADORA
+document.getElementById('CEP2').addEventListener('blur', function() {
+    const cep = this.value.replace(/\D/g, '');
+
+    if (cep.length !== 8) {
+        alert('CEP inválido');
+        return;
+    }
+
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.erro) {
+                alert('CEP não encontrado');
+            } else {
+                document.getElementById('UF_transpor').value = data.uf;
+                document.getElementById('Municipio2').value = data.localidade;
+                document.getElementById('Logradouro_transpor').value = data.logradouro;
+
+                // Aplicar classes de validação
+                document.getElementById('UF_transpor').classList.add('validate', 'valid');
+                document.getElementById('Municipio2').classList.add('validate', 'valid');
+                document.getElementById('Logradouro_transpor').classList.add('validate', 'valid');
+            }
+        })
+        .catch(error => console.error('Erro na requisição:', error));
+});
+
+
+          //Aba Produtos
+          
+// Array para armazenar os produtos
+var produtos = [];
+var valorTotalAcumulado = 0;
+
+// Função para salvar os produtos no localStorage
+function salvarProdutosLocalStorage() {
+    // Converte o array de produtos para uma string JSON
+    var produtosJSON = JSON.stringify(produtos);
+    
+    // Salva a string JSON no localStorage
+    localStorage.setItem('produtos', produtosJSON);
+}
+
+// Ouvinte de evento para o array de produtos
+// Este ouvinte será acionado sempre que o array de produtos for modificado
+Object.defineProperty(produtos, 'push', {
+    configurable: true,
+    enumerable: false,
+    writable: true,
+    value: function(...args) {
+        // Chama o método push original do array de produtos
+        Array.prototype.push.apply(this, args);
+        
+        // Salva os produtos no localStorage após a modificação
+        salvarProdutosLocalStorage();
+        
+        // Retorna o novo comprimento do array
+        return this.length;
+    }
+});
+
+
+// Função para calcular o valor total e adicionar o produto
+function adicionarProduto() {
+    // Obtém os valores dos inputs para o novo produto
+    var codigo = document.getElementById('cdg_pdt').value;
+    var descricao = document.getElementById('dsc_pdt').value;
+    var quantidade = parseFloat(document.getElementById('qtd_dados').value.replace(',', '.')); // Converte para número e substitui vírgula por ponto
+    var valorUnitario = parseFloat(document.getElementById('vlr_uni').value.replace(',', '.')); // Converte para número e substitui vírgula por ponto
+    document.getElementById('vlr_total').classList.add('validate', 'valid');
+
+    // Verifica se os valores são válidos
+    if (isNaN(quantidade) || isNaN(valorUnitario)) {
+        alert('Por favor, insira valores válidos para quantidade e valor unitário.');
+        return;
+    }
+
+    // Calcula o valor total do produto
+    var valorTotalProduto = quantidade * valorUnitario;
+
+    // Incrementa o valor total acumulado
+    valorTotalAcumulado += valorTotalProduto;
+
+    // Atualiza o valor total acumulado na input
+    document.getElementById('vlr_total').value = 'R$ ' + valorTotalAcumulado.toFixed(2).replace('.', ',');
+
+    // Cria um objeto representando o novo produto
+    var novoProduto = {
+        codigo: codigo,
+        descricao: descricao,
+        quantidade: quantidade,
+        valorUnitario: valorUnitario,
+        valorTotalProduto: valorTotalProduto
+    };
+
+    // Adiciona o novo produto ao array de produtos
+    produtos.push(novoProduto);
+
+    // Atualiza a tabela de produtos na página
+    if (window.innerWidth < 768) {
+        atualizarTabelaProdutosMobile();
+    } else {
+        atualizarTabelaProdutos();
+    }
+
+    // Limpa os inputs de código, descrição, quantidade e valor unitário após adicionar o produto
+    document.getElementById('cdg_pdt').value = '';
+    document.getElementById('dsc_pdt').value = '';
+    document.getElementById('qtd_dados').value = '';
+    document.getElementById('vlr_uni').value = '';
+
+    // Salva os valores no localStorage
+    salvarValoresLocalStorage();
+}
+
+    //Remover mas para a a daptação mobile
+    function removerProdutoLista(botao) {
+    var index = parseInt(botao.getAttribute('data-index'));
+    if (!isNaN(index) && index >= 0 && index < produtos.length) {
+        // Obtém o valor total do produto a ser removido
+        var valorTotalProdutoRemovido = produtos[index].valorTotalProduto;
+
+        // Remove o produto do array de produtos
+        produtos.splice(index, 1);
+
+        // Atualiza a lista de produtos na página
+        atualizarTabelaProdutosMobile();
+
+        // Atualiza o valor total acumulado subtraindo o valor do produto removido
+        valorTotalAcumulado -= valorTotalProdutoRemovido;
+
+        // Atualiza o valor total acumulado na input
+        document.getElementById('vlr_total').value = 'R$ ' + valorTotalAcumulado.toFixed(2).replace('.', ',');
+
+        // Salva os valores no localStorage
+        salvarValoresLocalStorage();
+
+        // Salva os produtos no localStorage após remover o produto
+        salvarProdutosLocalStorage();
+    } else {
+        alert('Erro ao encontrar o produto a ser removido.');
+    }
+}
+
+// Função para remover produto da tabela e do localStorage
+function removerProduto(botao) {
+    // Obtém a linha da tabela que contém o botão clicado
+    var linha = botao.closest('tr');
+
+    if (!linha) {
+        alert('Erro ao encontrar o produto a ser removido.');
+        return;
+    }
+
+    // Obtém o índice do produto na tabela
+    var index = parseInt(linha.getAttribute('data-index'));
+
+    // Obtém o valor total do produto a ser removido
+    var valorTotalProdutoRemovido = produtos[index].valorTotalProduto;
+
+    // Remove o produto do array de produtos
+    produtos.splice(index, 1);
+
+    atualizarTabelaProdutos();
+
+    // Atualiza o valor total acumulado subtraindo o valor do produto removido
+    valorTotalAcumulado -= valorTotalProdutoRemovido;
+
+    // Atualiza o valor total acumulado na input
+    document.getElementById('vlr_total').value = 'R$ ' + valorTotalAcumulado.toFixed(2).replace('.', ',');
+    
+    salvarValoresLocalStorage();
+
+    // Salva os produtos no localStorage após remover o produto
+    salvarProdutosLocalStorage();
+}
+
+
+// Função para salvar os produtos no localStorage
+function salvarProdutosLocalStorage() {
+    // Converte o array de produtos para uma string JSON
+    var produtosJSON = JSON.stringify(produtos);
+    
+    // Salva a string JSON no localStorage
+    localStorage.setItem('produtos', produtosJSON);
+}
+
+
+// Função para atualizar a tabela de produtos na página
+function atualizarTabelaProdutos() {
+    // Limpa a tabela
+    document.getElementById('corpoTabela').innerHTML = '';
+
+    // Adiciona os produtos ao corpo da tabela
+    produtos.forEach(function(produto, index) {
+        var novaLinha = document.createElement('tr');
+        novaLinha.classList.add('produto-row');
+        novaLinha.setAttribute('data-index', index); // Define o índice do produto na tabela
+        novaLinha.innerHTML = `
+            <td>${produto.codigo}</td>
+            <td>${produto.descricao}</td>
+            <td>${produto.quantidade}</td>
+            <td>${produto.valorUnitario}</td>
+            <td>${produto.valorTotalProduto}</td>
+            <td><button onclick="removerProduto(this, ${produto.valorTotalProduto})" class="btn red">Remover</button></td>
+
+        `;
+        document.getElementById('corpoTabela').appendChild(novaLinha);
+    });
+}
+
+function atualizarTabelaProdutosMobile() {
+    // Limpa a área de exibição dos produtos
+    var corpoTabela = document.getElementById('ListaProdutosMobile');
+    corpoTabela.innerHTML = '';
+
+    // Adiciona os produtos à lista
+    produtos.forEach(function(produto, index) {
+        var novoItem = document.createElement('div');
+        novoItem.classList.add('produto-item');
+        novoItem.setAttribute('data-index', index); // Define o índice do produto
+
+        novoItem.innerHTML = `
+            <div><strong>Código:</strong> ${produto.codigo}</div>
+            <div><strong>Descrição:</strong> ${produto.descricao}</div>
+            <div><strong>Quantidade:</strong> ${produto.quantidade}</div>
+            <div><strong>Valor Unitário (R$):</strong> ${produto.valorUnitario}</div>
+            <div><strong>Valor Total (R$):</strong> ${produto.valorTotalProduto}</div>
+            <button onclick="removerProdutoLista(this)" data-index="${index}" class="btn red">Remover</button>
+        `;
+        corpoTabela.appendChild(novoItem);
+    });
+}
+
+
+// Limpa tudo ao recarregar a pág
+window.onload = function() {
+            limparInputs(); // Chama a função para limpar os inputs antes de sair da página
+        };
+
+
+// Função para limpar inputs
+function limparInputs() {
+
+  document.getElementById('Cliente').value = '';
+  document.getElementById('CpfCnpj').value = '';
+  document.getElementById('InscricaoEstadual').value = '';
+  document.getElementById('Contato').value = '';
+  document.getElementById('CEP').value = '';
+  document.getElementById('UF').value = '';
+  document.getElementById('Municipio').value = '';
+  document.getElementById('Bairro').value = '';
+  document.getElementById('rua').value = '';    
+  document.getElementById('Complemento').value = '';
+  document.getElementById('Numero').value = '';
+  document.getElementById('Telefone').value = '';
+  document.getElementById('RazaoSocial').value = '';
+  document.getElementById('ValorFrete').value = '';
+  document.getElementById('CNPJ').value = '';
+  document.getElementById('IE').value = '';
+  document.getElementById('IEdoSubstitulotributario').value = '';
+  document.getElementById('SerieNotaFiscal').value = '';
+  document.getElementById('CEP2').value = '';
+  document.getElementById('UF_transpor').value = '';
+  document.getElementById('Logradouro_transpor').value = '';
+  document.getElementById('Municipio2').value = '';
+  document.getElementById('Quantidade').value = '';
+  document.getElementById('Especie').value = '';
+  document.getElementById('Marca').value = '';
+  document.getElementById('Numeracao').value = '';
+  document.getElementById('pesoL').value = '';
+  document.getElementById('pesoB').value = '';
+  document.getElementById('cdg_pdt').value = '';
+  document.getElementById('dsc_pdt').value = '';
+  document.getElementById('qtd_dados').value = '';
+  document.getElementById('vlr_uni').value = '';
+  document.getElementById('vlr_total').value = '';
+  localStorage.setItem('produtos', '');
+
+  
+
+  // Seleciona o elemento select pelo seu id
+var selectElement = document.getElementById('Naturezaoper');
+var selectElement2 = document.getElementById('entrada');
+var selectElement3 = document.getElementById('Frete');
+
+// Define o valor do select para 0
+selectElement.value = '0';
+selectElement2.value = '0';
+selectElement3.value = '0';
+
+    // Salva os valores no localStorage após limpar os inputs
+    salvarValoresLocalStorage();
+}
+
+
+// Função para incrementar automaticamente o número da nota fiscal
+function incrementarNumeroNota() {
+    let numeroNota = localStorage.getItem('NumNotaFiscal');
+    if (numeroNota === null || numeroNota === '') {
+        numeroNota = 1;
+    } else {
+        numeroNota = parseInt(numeroNota) + 1;
+    }
+    localStorage.setItem('NumNotaFiscal', numeroNota);
+    document.getElementById('NumNotaFiscal').value = numeroNota.toString().padStart(9, '0');
+
+    // Salva os valores no localStorage após incrementar o número da nota
+    salvarValoresLocalStorage();
+}
+
+// Função para salvar os valores das inputs e selects no localStorage
+function salvarValoresLocalStorage() {
+    document.querySelectorAll('input, select').forEach(elemento => {
+        // Exceção para o campo NumNotaFiscal
+        if (elemento.id === 'NumNotaFiscal' && localStorage.getItem('NumNotaFiscal') === null) {
+            localStorage.setItem(elemento.id, elemento.placeholder);
+        } else {
+            localStorage.setItem(elemento.id, elemento.value);
+        }
+    });
+}
+
+// Função para carregar os valores salvos no localStorage
+function carregarValoresLocalStorage() {
+    document.querySelectorAll('input, select').forEach(elemento => {
+        const valorSalvo = localStorage.getItem(elemento.id);
+        if (valorSalvo !== null && valorSalvo !== '') {
+            elemento.value = valorSalvo;
+        } else if (elemento.id === 'NumNotaFiscal') {
+            elemento.value = elemento.placeholder;
+        }
+    });
+}
+
+
+// Função para limpar o localStorage exceto o número da nota fiscal
+function limparLocalStoragefunction() {
+    limparInputs();
+    location.reload();
+
+    // Salva os valores no localStorage após limpar o localStorage
+    salvarValoresLocalStorage();
+}
+
+// Adicionando evento para salvar os valores no localStorage ao alterar inputs ou selects
+document.querySelectorAll('input, select').forEach(elemento => {
+    elemento.addEventListener('input', salvarValoresLocalStorage);
+});
+
+// Carregando os valores salvos no localStorage ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    carregarValoresLocalStorage();
+
+    function atualizarHora() {
+    var dataAtual = new Date();
+
+    var ano = dataAtual.getFullYear();
+    var mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0');
+    var dia = dataAtual.getDate().toString().padStart(2, '0');
+    var hora = dataAtual.getHours().toString().padStart(2, '0');
+    var minuto = dataAtual.getMinutes().toString().padStart(2, '0');
+    var segundo = dataAtual.getSeconds().toString().padStart(2, '0');
+
+    var dataFormatada = dia + '/' + mes + '/' + ano + ' ' + hora + ':' + minuto + ':' + segundo;
+
+    document.getElementById('data_emissao').value = dataFormatada;
+}
+
+// Atualizar a cada segundo
+setInterval(atualizarHora, 1000);
+
+
+});
+
+// Evento para limpar o localStorage ao clicar no botão "Limpar Local Storage"
+document.getElementById('limparLocalStorage').addEventListener('click', limparLocalStoragefunction);
+
+          </script>
+      
+<script src="JS/index.js"></script>
+
+    </body>
+</html>
